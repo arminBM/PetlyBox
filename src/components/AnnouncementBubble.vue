@@ -1,10 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 
-// v-model:visible
 const props = defineProps({
   visible: { type: Boolean, default: false },
-  shape: { type: String, default: 'circle' }, // 'circle' | 'square'
+  shape: { type: String, default: 'circle' },
   text: { type: String, default: '🎉 20% OFF your first PetlyBox!' }
 })
 const emit = defineEmits(['update:visible', 'click'])
@@ -29,8 +28,8 @@ const shapeClass = computed(() =>
       <div
         :class="[
           'flex items-center gap-3 shadow-lg ring-1 ring-black/10 bg-yellow-400 text-black',
-          'px-4 py-3', // padding
-          'w-auto max-w-[90vw] sm:max-w-xs', // sizing
+          'px-4 py-3',
+          'w-auto max-w-[90vw] sm:max-w-xs',
           shapeClass
         ]"
       >
@@ -57,7 +56,7 @@ const shapeClass = computed(() =>
 </template>
 
 <style scoped>
-/* smooth slide from left */
+
 .slide-left-enter-from,
 .slide-left-leave-to { opacity: 0; transform: translateX(-16px); }
 .slide-left-enter-to,

@@ -4,19 +4,17 @@ import { ref, onMounted, onUnmounted, nextTick } from "vue"
 const showPopup = ref(false)
 const emailOrPhone = ref("")
 
-// 🔔 tell parent when popup finishes (so it can show the announcement bubble)
 const emit = defineEmits(["closed"])
 
 onMounted(async () => {
   setTimeout(async () => {
     showPopup.value = true
     await nextTick()
-    // optional: focus the input when the popup opens
     const el = document.getElementById("popup-contact")
     el?.focus()
   }, 800)
 
-  // close on ESC
+  
   window.addEventListener("keydown", onEsc)
 })
 
@@ -31,16 +29,15 @@ function onEsc(e) {
 function closePopup() {
   if (!showPopup.value) return
   showPopup.value = false
-  emit("closed") // ✅ notify parent
+  emit("closed") 
 }
 
 function register() {
   if (!emailOrPhone.value) return
   alert(`Registered: ${emailOrPhone.value}`)
-  closePopup() // ✅ will emit "closed"
+  closePopup() 
 }
 
-// close if clicking the dark backdrop
 function onBackdropClick(e) {
   if (e.target === e.currentTarget) closePopup()
 }

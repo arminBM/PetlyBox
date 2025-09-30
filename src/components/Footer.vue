@@ -1,5 +1,4 @@
 <script setup>
-// no script needed right now
 </script>
 
 <template>
@@ -19,5 +18,4 @@
 </template>
 
 <style scoped>
-/* keep for future footer tweaks */
 </style>

@@ -14,20 +14,18 @@ const props = defineProps({
       popular ? 'ring-2 ring-yellow-500' : ''
     ]"
   >
-    <!-- Popular badge -->
+   
     <div v-if="popular" class="mb-2">
       <span class="inline-block bg-yellow-500 text-black text-xs font-semibold px-3 py-1 rounded-full">
         Most Popular
       </span>
     </div>
 
-    <!-- Title & Price -->
     <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
     <p class="text-4xl font-bold mb-4">
       ${{ price }}<span class="text-base font-medium">/mo</span>
     </p>
 
-    <!-- Perks list -->
     <ul class="text-left space-y-2 mb-6">
       <li v-for="(perk, i) in perks" :key="i" class="flex items-start">
         <span class="mr-2 text-yellow-500">✔</span>
@@ -35,7 +33,6 @@ const props = defineProps({
       </li>
     </ul>
 
-    <!-- CTA -->
     <button
       class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
     >

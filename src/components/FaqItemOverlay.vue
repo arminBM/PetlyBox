@@ -13,7 +13,6 @@ const root = ref(null)
 const close = () => emit('update:modelValue', false)
 const toggle = () => emit('update:modelValue', !props.modelValue)
 
-// Close on ESC and click-outside
 function onKeydown(e) { if (e.key === 'Escape') close() }
 function onDocClick(e) {
   if (!props.modelValue) return
@@ -32,7 +31,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- relative so the overlay can anchor to this row -->
   <div ref="root" class="relative py-2">
     <button
       @click="toggle"
@@ -55,7 +53,6 @@ onUnmounted(() => {
       </svg>
     </button>
 
-    <!-- Overlay panel (doesn't push layout) -->
     <transition name="fade-ans">
       <div
         v-if="modelValue"
@@ -72,7 +69,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Smooth fade/scale */
 .fade-ans-enter-from,
 .fade-ans-leave-to { opacity: 0; transform: translateY(-4px) scale(0.98); }
 .fade-ans-enter-to,
@@ -80,7 +76,6 @@ onUnmounted(() => {
 .fade-ans-enter-active,
 .fade-ans-leave-active { transition: opacity .24s ease, transform .24s ease; }
 
-/* Mouse clicks won't leave the focus ring; keyboard still shows via focus-visible */
 button:focus:not(:focus-visible) { outline: none; box-shadow: none; }
 
 @media (prefers-reduced-motion: reduce) {

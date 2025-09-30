@@ -12,12 +12,11 @@ import FaqSection from './components/FaqSection.vue';
 import AnnouncementBubble from './components/AnnouncementBubble.vue';
 const bubbleVisible = ref(false)
 function onPopupClosed() { setTimeout(() => (bubbleVisible.value = true), 300) }
-function goToPlans() { window.location.href = '/plans' } // or use vue-router if you have it
+function goToPlans() { window.location.href = '/plans' }
 
 </script>
 
 <template>
-  <!-- <AnnouncementBar/> -->
   <Header/>
   <HeroSection/>
   <PopUp @closed="onPopupClosed"/>

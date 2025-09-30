@@ -19,7 +19,6 @@ const setOpen = (i) => { openIndex.value = isOpen(i) ? -1 : i }
     <div class="mx-auto max-w-4xl px-4">
       <h2 class="text-3xl font-semibold text-center mb-8">Frequently Asked Questions</h2>
 
-      <!-- No divide-y: give each row its own border so no line shows behind the overlay -->
       <div>
         <FaqItemOverlay
           v-for="(faq, i) in faqs"
